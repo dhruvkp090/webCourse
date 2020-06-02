@@ -1,0 +1,22 @@
+{
+  "name": "webcourse",
+  "version": "1.0.0",
+  "description": "Repository to follow along with the Web Dev course on coursera",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhruvkp090/webCourse.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Dhruv Kumar Patwari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhruvkp090/webCourse/issues"
+  },
+  "homepage": "https://github.com/dhruvkp090/webCourse#readme"
+}
