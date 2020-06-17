@@ -4,7 +4,9 @@
   "description": "Repository to follow along with the Web Dev course on coursera",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/dhruvkp090/webCourse/issues"
   },
-  "homepage": "https://github.com/dhruvkp090/webCourse#readme"
+  "homepage": "https://github.com/dhruvkp090/webCourse#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
 }
