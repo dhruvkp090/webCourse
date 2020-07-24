@@ -33,7 +33,7 @@
                     <li class="nav-item"><a href="./contactus.html" class="nav-link"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginLink">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -73,10 +73,8 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="offset-md-2 col-md-2">
+                            <div class="offset-md-9 col-md-4">
                                 <button type="submit" class="btn btn-danger" data-dismiss="modal"> Cancel </button>
-                            </div>
-                            <div class="col-md-2">
                                 <button type="submit" class="btn btn-primary"> Submit </button>
                             </div>
                         </div>
@@ -150,10 +148,8 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="offset-md-2 col-md-2">
+                            <div class="offset-md-9 col-md-4">
                                 <button type="submit" class="btn btn-danger" data-dismiss="modal"> Cancel </button>
-                            </div>
-                            <div class="col-md-2">
                                 <button type="submit" class="btn btn-primary"> Reserve </button>
                             </div>
                         </div>
@@ -174,7 +170,7 @@
                     <img src="img/logo.png" alt="" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-2 align-self-center">
-                    <a data-toggle="modal" data-target="#reservation" class="btn btn-block btn-lg btn-warning"> Reserve Table</a>
+                    <a id="reserveLink" class="btn btn-block btn-lg btn-warning"> Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -356,6 +352,14 @@
                     $("#carouselButton").children("span").removeClass('fa-play');
                     $("#carouselButton").children("span").addClass('fa-pause');
                 }
+            });
+            $('#loginLink').click(function(){
+                $('#loginModal').modal('toggle');
+                $('#loginModal').modal('show');
+            });
+            $('#reserveLink').click(function(){
+                $('#reservation').modal('toggle');
+                $('#reservation').modal('show');
             });
         });
     </script>
