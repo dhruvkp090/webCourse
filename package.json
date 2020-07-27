@@ -4,10 +4,17 @@
 	"description": "Repository to follow along with the Web Dev course on coursera",
 	"main": "index.html",
 	"scripts": {
-		"start": "npm run lite",
+		"start": "npm run watch:all",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"lite": "lite-server",
-		"scss": "node-sass -o bootstrapStuff/Bootstrap4/conFusion/css/ bootstrapStuff/Bootstrap4/conFusion/css/"
+		"scss": "node-sass -o bootstrapStuff/Bootstrap4/conFusion/css/ bootstrapStuff/Bootstrap4/conFusion/css/",
+		"watch:scss": "onchange \"bootstrapStuff/Bootstrap4/conFusion/css/*.scss\" -- npm run scss",
+		"watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\"",
+		"clean": "rimraf bootstrapStuff/Bootstrap4/conFusion/dist",
+		"copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* bootstrapStuff/Bootstrap4/conFusion/dist/fonts",
+		"imagemin": "imagemin bootstrapStuff/Bootstrap4/conFusion/img/* -o bootstrapStuff/Bootstrap4/conFusion/dist/img/",
+		"usemin": "usemin bootstrapStuff/Bootstrap4/conFusion/contactus.html -d bootstrapStuff/Bootstrap4/conFusion/dist --htmlmin -o bootstrapStuff/Bootstrap4/conFusion/dist/contactus.html && usemin bootstrapStuff/Bootstrap4/conFusion/aboutus.html -d bootstrapStuff/Bootstrap4/conFusion/dist --htmlmin -o bootstrapStuff/Bootstrap4/conFusion/dist/aboutus.html && usemin bootstrapStuff/Bootstrap4/conFusion/index.html -d bootstrapStuff/Bootstrap4/conFusion/dist --htmlmin -o bootstrapStuff/Bootstrap4/conFusion/dist/index.html",
+		"build": "npm run clean && npm run copyfonts && npm run imagemin && npm run usemin"
 	},
 	"repository": {
 		"type": "git",
@@ -23,8 +30,15 @@
 	},
 	"homepage": "https://github.com/dhruvkp090/webCourse#readme",
 	"devDependencies": {
+		"cssmin": "^0.4.3",
+		"htmlmin": "0.0.7",
 		"lite-server": "^2.5.4",
-		"node-sass": "^4.14.1"
+		"node-sass": "^4.14.1",
+		"onchange": "^7.0.2",
+		"parallelshell": "^3.0.1",
+		"rimraf": "^2.6.2",
+		"uglifyjs": "^2.4.11",
+		"usemin-cli": "^0.6.0"
 	},
 	"dependencies": {
 		"bootstrap": "^4.4.1",
